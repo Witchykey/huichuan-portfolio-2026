@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Huichuan Li — product growth, engineering and analytics</title>
+<meta name="description" content="Huichuan Li — product growth engineering and analytics. I ship product surfaces, instrument them, and own the numbers they produce.">
+<link rel="canonical" href="https://huichuan.slowllm.com/">
+<meta name="author" content="Huichuan Li">
+<meta name="theme-color" content="#FBFAF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121316" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://huichuan.slowllm.com/">
+<meta property="og:title" content="Huichuan Li — product growth, engineering and analytics">
+<meta property="og:description" content="I ship the surface, wire the tracking into it, and own the numbers it produces.">
+<meta property="og:image" content="https://huichuan.slowllm.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Huichuan Li — product growth, engineering and analytics">
+<meta name="twitter:description" content="I ship the surface, wire the tracking into it, and own the numbers it produces.">
+<meta name="twitter:image" content="https://huichuan.slowllm.com/og-image.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Huichuan Li",
+  "url": "https://huichuan.slowllm.com/",
+  "email": "mailto:huichuan.li.ds@gmail.com",
+  "jobTitle": "Product Growth — Engineering and Analytics",
+  "sameAs": ["https://linkedin.com/in/huichuanli"],
+  "address": {"@type": "PostalAddress", "addressRegion": "CA", "addressCountry": "US"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "California State University, East Bay"},
+    {"@type": "CollegeOrUniversity", "name": "San Francisco State University"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF8;
+    --ink:#131417;
+    --muted:#5C5F68;
+    --faint:#8A8D95;
+    --hair:#E4E2DE;
+    --signal:#2B31A8;
+    --panel:#F2F1ED;
+
+    --display:"Archivo",system-ui,-apple-system,sans-serif;
+    --body:"Source Serif 4",Georgia,serif;
+
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    color-scheme:light dark;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121316;--ink:#EDEBE7;--muted:#9EA1A8;--faint:#767980;
+      --hair:#2A2C31;--signal:#A3A9F5;--panel:#191A1E;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121316;--ink:#EDEBE7;--muted:#9EA1A8;--faint:#767980;
+    --hair:#2A2C31;--signal:#A3A9F5;--panel:#191A1E;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 1.5rem);-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--signal);color:var(--paper)}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.75rem}
+
+  /* ── hero ───────────────────────────────── */
+  .hero{padding:5.5rem 0 3rem}
+  .eyebrow{
+    font-family:var(--display);font-size:.8rem;font-weight:600;
+    color:var(--signal);margin:0 0 1.4rem;letter-spacing:.01em;
+  }
+  h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(2.6rem,6.5vw,4.4rem);
+    line-height:1.02;letter-spacing:-.03em;margin:0;
+  }
+  .thesis{
+    font-size:clamp(1.15rem,2.4vw,1.42rem);line-height:1.45;
+    margin:1.5rem 0 0;max-width:30ch;color:var(--ink);
+  }
+  .sub{margin:1.1rem 0 0;color:var(--muted);max-width:52ch;font-size:1.02rem}
+
+  /* ── the loop ───────────────────────────── */
+  .loop{
+    margin:3.5rem 0 0;padding:1.75rem 0;
+    border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+  }
+  .step{position:relative}
+  .step b{
+    display:block;font-family:var(--display);font-size:.98rem;
+    font-weight:600;letter-spacing:-.005em;margin-bottom:.3rem;
+  }
+  .step span{display:block;font-size:.88rem;color:var(--muted);line-height:1.45}
+  .step:not(:last-child)::after{
+    content:"";position:absolute;top:.55em;right:-.95rem;
+    width:.5rem;height:1px;background:var(--faint);
+  }
+  .loopnote{
+    font-family:var(--display);font-size:.82rem;color:var(--faint);
+    margin:1rem 0 0;
+  }
+
+  /* ── sections ───────────────────────────── */
+  section{padding:4.5rem 0 0}
+  h2{
+    font-family:var(--display);font-size:.88rem;font-weight:600;
+    color:var(--signal);margin:0 0 2rem;letter-spacing:.01em;
+  }
+
+  /* ── work ───────────────────────────────── */
+  .case{
+    padding:2rem 0;border-top:1px solid var(--hair);
+    display:grid;grid-template-columns:1fr minmax(0,13rem);gap:1rem 2.5rem;align-items:start;
+  }
+  .case:first-of-type{border-top:none;padding-top:0}
+  .case h3{
+    font-family:var(--display);font-weight:600;
+    font-size:1.32rem;letter-spacing:-.015em;margin:0 0 .7rem;line-height:1.2;
+  }
+  .case p{margin:0 0 .7rem;color:var(--muted);max-width:56ch}
+  .case p:last-child{margin-bottom:0}
+  .case strong{color:var(--ink);font-weight:600}
+  .result{
+    background:var(--panel);padding:1rem 1.1rem;border-radius:2px;
+    align-self:start;
+  }
+  .result .fig{
+    font-family:var(--display);font-weight:700;
+    font-size:1.9rem;line-height:1;letter-spacing:-.03em;
+    color:var(--signal);font-variant-numeric:tabular-nums lining-nums;
+    display:block;
+  }
+  .result .lab{
+    display:block;font-family:var(--display);font-size:.78rem;
+    color:var(--muted);margin-top:.45rem;line-height:1.35;
+  }
+  .built{
+    font-family:var(--display);font-size:.78rem;color:var(--faint);
+    margin-top:.9rem;line-height:1.5;
+  }
+
+  /* ── stack ──────────────────────────────── */
+  .stack{display:grid;grid-template-columns:10rem 1fr;gap:1.1rem 2.5rem;align-items:baseline}
+  .stack dt{font-family:var(--display);font-size:.88rem;font-weight:600}
+  .stack dd{margin:0;color:var(--muted);font-size:.97rem;line-height:1.6}
+
+  /* ── background ─────────────────────────── */
+  .row{
+    display:grid;grid-template-columns:8.5rem 1fr;gap:.4rem 2.5rem;
+    padding:1.1rem 0;border-top:1px solid var(--hair);
+  }
+  .row:first-of-type{border-top:none;padding-top:0}
+  .yr{
+    font-family:var(--display);font-size:.82rem;color:var(--faint);
+    font-variant-numeric:tabular-nums lining-nums;padding-top:.2rem;
+  }
+  .row b{font-family:var(--display);font-size:1rem;font-weight:600;display:block}
+  .row span{display:block;color:var(--muted);font-size:.95rem;margin-top:.15rem}
+
+  /* ── contact ────────────────────────────── */
+  .contact{padding:4.5rem 0 6rem}
+  .contact p{font-size:1.15rem;max-width:46ch;margin:0 0 1.6rem;color:var(--muted)}
+  .links{display:flex;flex-wrap:wrap;gap:.6rem 2rem;font-family:var(--display);font-size:1.02rem;font-weight:600}
+  .links a{
+    color:var(--signal);text-decoration:none;
+    border-bottom:1.5px solid transparent;padding-bottom:1px;
+    transition:border-color .15s ease;
+  }
+  .links a:hover{border-bottom-color:var(--signal)}
+  footer{
+    border-top:1px solid var(--hair);padding:1.5rem 0 2.5rem;
+    font-family:var(--display);font-size:.78rem;color:var(--faint);
+  }
+
+  /* ── one orchestrated entrance ──────────── */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0;transform:translateY(9px);animation:rise .6s cubic-bezier(.2,.7,.3,1) forwards}
+    .reveal:nth-child(1){animation-delay:.05s}
+    .reveal:nth-child(2){animation-delay:.14s}
+    .reveal:nth-child(3){animation-delay:.23s}
+    .reveal:nth-child(4){animation-delay:.32s}
+    .reveal:nth-child(5){animation-delay:.41s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+
+  @media (max-width:720px){
+    body{font-size:16px}
+    .hero{padding:3.5rem 0 2rem}
+    .loop{grid-template-columns:1fr 1fr;gap:1.25rem}
+    .step:nth-child(2)::after{display:none}
+    .case{grid-template-columns:1fr;gap:1.2rem}
+    .result{justify-self:start;min-width:11rem}
+    .stack{grid-template-columns:1fr;gap:.25rem}
+    .stack dt{margin-top:1rem}
+    .row{grid-template-columns:1fr;gap:.1rem}
+    .yr{padding-top:0}
+  }
+  @media (max-width:430px){
+    .loop{grid-template-columns:1fr}
+    .step::after{display:none!important}
+  }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow reveal">Product growth — engineering and analytics</p>
+    <h1 class="reveal">Huichuan Li</h1>
+    <p class="thesis reveal">I ship the surface, wire the tracking into it, and own the numbers it produces.</p>
+    <p class="sub reveal">Most growth work breaks at a handoff — the person who builds the page isn't the person who defines the event, and neither one owns the funnel. At OpGov I joined with no measurement in place and did all three. M.S. Statistics, B.S. Quantitative Economics.</p>
+
+    <div class="loop reveal">
+      <div class="step">
+        <b>Ship</b>
+        <span>Production pages and components in Next.js, React, TypeScript</span>
+      </div>
+      <div class="step">
+        <b>Instrument</b>
+        <span>Event taxonomy designed and wired into the components themselves</span>
+      </div>
+      <div class="step">
+        <b>Measure</b>
+        <span>Funnel and path analysis, cohorts, controlled tests</span>
+      </div>
+      <div class="step">
+        <b>Iterate</b>
+        <span>Ship the winners, write up the losers, change the definition when it's wrong</span>
+      </div>
+    </div>
+    <p class="loopnote">One person, four steps, no handoff.</p>
+  </header>
+
+  <section>
+    <h2>Selected work</h2>
+
+    <article class="case">
+      <div>
+        <h3>Finding where signups died</h3>
+        <p>Nobody could see into the funnel, because there was no funnel to see — no event schema, no journey view, no agreed definition of what a converted user was.</p>
+        <p>I designed the event taxonomy from scratch and implemented the tracking directly in the components, then ran funnel and path analysis across <strong>30M+ interactions</strong> to isolate the two largest drop-offs. Partnered with product on the flow redesign that followed.</p>
+        <p class="built">Next.js · React · TypeScript · GA4 · SQL · BigQuery</p>
+      </div>
+      <div class="result">
+        <span class="fig">43%</span>
+        <span class="lab">lift in visitor-to-signup conversion, 2.1% to 3.0% over two quarters</span>
+      </div>
+    </article>
+
+    <article class="case">
+      <div>
+        <h3>Ad-click tracking, end to end</h3>
+        <p>Sponsored placements were being sold against numbers nobody could verify, because click data never made it anywhere durable.</p>
+        <p>I built the capture flow across the whole path: the interaction handling in React components, a <strong>Redis-backed API</strong> to write the events, and the downstream tables that made the result queryable for campaign and conversion analysis.</p>
+        <p class="built">React · REST API · Redis · SQL</p>
+      </div>
+      <div class="result">
+        <span class="fig">35%</span>
+        <span class="lab">lift in sponsored-placement CTR after reallocating toward high-intent surfaces</span>
+      </div>
+    </article>
+
+    <article class="case">
+      <div>
+        <h3>Spending less to get better users</h3>
+        <p>Acquisition spend was spread evenly across an audience that didn't behave evenly.</p>
+        <p>I segmented users into five behavioral cohorts on geography, behavior, and engagement, measured retention by cohort, and moved spend toward the two that held. Separately ran controlled tests on placement and messaging against success metrics defined before launch — newsletter signups rose about 20%.</p>
+        <p class="built">Cohort analysis · retention curves · A/B testing · Python · SQL</p>
+      </div>
+      <div class="result">
+        <span class="fig">15%</span>
+        <span class="lab">reduction in effective CAC, quarter over quarter</span>
+      </div>
+    </article>
+
+    <article class="case">
+      <div>
+        <h3>Deciding what the AI was allowed to ship</h3>
+        <p>The company wanted to publish AI-generated content and had no way to judge whether it was good enough.</p>
+        <p>I defined the quality rubric, scored AI output against human-authored output against it, and the analysis set the policy for what reached production and what didn't. Separately evaluated a production RAG system on live interaction data — resolution, fallback, retrieval relevance — and traced failure patterns to specific fixes in retrieval and prompting.</p>
+        <p class="built">Evaluation design · structured-output validation · Python</p>
+      </div>
+      <div class="result">
+        <span class="fig">Policy</span>
+        <span class="lab">the evaluation governed what shipped, not a recommendation someone could ignore</span>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>How I work</h2>
+    <dl class="stack">
+      <dt>Build</dt>
+      <dd>Next.js App Router, React, TypeScript, JavaScript, MUI, Tailwind, Framer Motion, Clerk, JSON-LD. Production pages and reusable components — pricing and donation flows, advertiser surfaces, city pages, shared component library.</dd>
+
+      <dt>Instrument</dt>
+      <dd>GA4 event taxonomy design and implementation, REST APIs, Redis, metric definition and standardization, completeness and conformance checks so a number that looks wrong is wrong for a findable reason.</dd>
+
+      <dt>Measure</dt>
+      <dd>Funnel and path analysis, cohort and retention analysis, A/B test design and analysis, significance and proportion testing, regression and time-series forecasting.</dd>
+
+      <dt>Data</dt>
+      <dd>SQL across BigQuery, PostgreSQL, Oracle and SQL Server. Python with pandas and statsmodels, R, Databricks, Tableau, Power BI.</dd>
+
+      <dt>Scope</dt>
+      <dd>Frontend and instrumentation are where I'm strongest. Backend work has been APIs and data pipelines.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Background</h2>
+
+    <div class="row">
+      <div class="yr">2025 — now</div>
+      <div>
+        <b>Data Analyst, Product &amp; Growth Analytics</b>
+        <span>OpGov.ai / OpGov.News — early-stage civic information platform, San Francisco Bay Area</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="yr">2024</div>
+      <div>
+        <b>Data Analyst, contract</b>
+        <span>Boston Congress of Public Health — forecasting that caught an under-enrollment trend mid-program, and a monthly reporting cycle cut from three days to four hours</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="yr">2024</div>
+      <div>
+        <b>Data Analyst Fellow, GIS</b>
+        <span>CA Consortium for Public Health Informatics &amp; Technology — county-level geospatial analysis for regional resource allocation</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="yr">2021 — 2023</div>
+      <div>
+        <b>Data Analyst, Operations &amp; Quality Analytics</b>
+        <span>Gemological Institute of America — raised reporting accuracy from ~92% to 99%+, and got three teams to agree on one set of metric definitions</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="yr">2025 / 2021</div>
+      <div>
+        <b>M.S. Statistics · B.S. Quantitative Economics</b>
+        <span>CSU East Bay · San Francisco State University</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Get in touch</h2>
+    <p>Looking for growth roles where the same person builds the surface and owns the number. Happy to walk through any of the work above.</p>
+    <div class="links">
+      <a href="mailto:huichuan.li.ds@gmail.com">huichuan.li.ds@gmail.com</a>
+      <a href="https://linkedin.com/in/huichuanli" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>San Francisco Bay Area</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://huichuan.slowllm.com/sitemap.xml
