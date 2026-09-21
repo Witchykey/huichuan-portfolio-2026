@@ -1,3 +1,0 @@
-# Send the www hostname to the apex domain.
-# Only needed if you add www.slowllm.com as a custom domain in Pages.
-https://www.slowllm.com/* https://huichuan.slowllm.com/:splat 301
